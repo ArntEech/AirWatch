@@ -20,12 +20,14 @@ export interface DemoDate {
 
 // From the guide, section 8. Leads first.
 export const DEMO_DATES: DemoDate[] = [
+  // From the guide, section 8. In date order (oldest first).
   { act: 1, date: "2026-01-29", note: "Worst Harmattan day", filter: "trained" },
-  { act: 1, date: "2026-02-26", note: "Borderline: the honest maybe", filter: "trained" },
   { act: 1, date: "2026-02-16", note: "Clean day: no false alarm", filter: "trained" },
-  { act: 2, date: "2026-09-05", note: "37 sensors new to the model", filter: "new" },
+  { act: 1, date: "2026-02-26", note: "Borderline: the honest maybe", filter: "trained" },
   { act: 2, date: "2026-08-25", note: "Mpoase: unhealthy, called right", filter: "new" },
+  { act: 2, date: "2026-09-05", note: "37 sensors new to the model", filter: "new" },
 ];
+
 
 export function applyFilter(sensors: ReplaySensor[], filter: TrainingFilter): ReplaySensor[] {
   if (filter === "trained") return sensors.filter((s) => s.in_training);
